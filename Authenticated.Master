@@ -1,0 +1,48 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Authenticated.master.cs" Inherits="VelascoPersonalWebsite_IPT.Authenticated" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%: Page.Title %> - Velasco Personal Website</title>
+    <link href="<%= ResolveUrl("~/Content/bootstrap.min.css") %>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Content/Site.css") %>" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+<body class="bg-light text-dark">
+    <form id="form1" runat="server">
+        <header class="sticky-top bg-white bg-opacity-75 border-bottom">
+            <nav class="navbar navbar-expand-lg sticky-top" aria-label="Authenticated navigation">
+                <div class="container py-2">
+
+                    <asp:HyperLink ID="BrandLink" runat="server"
+                        CssClass="navbar-brand nav-link fw-semibold text-dark mb-0" NavigateUrl="~/home">
+                            <img src="<%= ResolveUrl("~/assets/svg/tilla_logo.svg") %>"
+                                alt="owl."
+                                class="img-fluid d-block"
+                                width="40"
+                                height="40" />
+                        </asp:HyperLink>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#authenticatedNavigation" aria-controls="authenticatedNavigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="authenticatedNavigation" class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav align-items-lg-center gap-lg-2">
+                            <li class="nav-item"><a class="nav-link text-dark" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark" href="#education">Education</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark" href="#skills">Skills</a></li>
+                            <li class="nav-item"><a class="btn btn-dark btn-sm px-3" href="#contact">Get in touch</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+
+        <script src="<%= ResolveUrl("~/Scripts/bootstrap.bundle.min.js") %>"></script>
+    </form>
+</body>
+</html>

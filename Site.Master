@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="VelascoPersonalWebsite_IPT.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%: Page.Title %> - Velasco Personal Website</title>
+    <link href="<%= ResolveUrl("~/Content/bootstrap.min.css") %>" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="bg-light text-dark">
+    <form id="form1" runat="server">
+        <header>
+            <nav class="navbar navbar-dark bg-light border-bottom py-3" aria-label="Main navigation">
+                <div class="container-fluid px-3 px-md-4">
+                    <asp:HyperLink ID="BrandLink" runat="server" NavigateUrl="~/Feed.aspx"
+                        CssClass="navbar-brand fw-semibold text-dark mb-0">
+                        <img src="<%= ResolveUrl("~/assets/svg/tilla_logo.svg") %>"
+                            alt="owl."
+                            class="img-fluid d-block"
+                            width="40"
+                            height="40" />
+                    </asp:HyperLink>
+
+                    <div class="dropdown ms-auto">
+                        <button class="btn btn-secondary rounded-circle p-0 d-flex align-items-center justify-content-center"
+                            type="button"
+                            id="ProfileMenuButton"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            aria-label="Open profile menu"
+                            style="width: 40px; height: 40px;">
+                            <span class="fw-semibold">P</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ProfileMenuButton">
+                            <li><a class="dropdown-item " href="<%= ResolveUrl("~/Profile.aspx") %>">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Saved</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item " href="Home.aspx">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+    <script src="<%= ResolveUrl("~/Scripts/bootstrap.bundle.min.js") %>"></script>
+</body>
+</html>

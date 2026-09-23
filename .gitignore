@@ -1,0 +1,63 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Aa]rm/
+[Aa]rm64/
+x64/
+x86/
+
+# Visual Studio cache and test output
+TestResults/
+[Tt]est[Rr]esult*/
+*.trx
+*.log
+
+# Code analysis and coverage
+*.coverage
+*.coveragexml
+
+# NuGet packages and generated files
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+
+# ASP.NET temporary/generated files
+App_Data/
+*.publishsettings
+PublishProfiles/
+
+# Deployment and publishing output
+publish/
+[Ww]eb[Pp]ublish/
+
+# ReSharper and Rider
+_ReSharper*/
+*.DotSettings.user
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+secrets.json
+
+# Backup and temporary files
+*.tmp
+*.temp
+*.bak
+*~
