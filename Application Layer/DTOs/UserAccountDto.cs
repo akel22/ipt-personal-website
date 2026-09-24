@@ -20,6 +20,9 @@ namespace VelascoPersonalWebsite_IPT.Application.DTOs
 
         public bool IsActive { get; set; }
 
+        public bool IsOnline { get; set; }
+
         public DateTime RegisteredUtc { get; set; }
     }
+
 }

@@ -34,6 +34,7 @@
                             <li class="nav-item"><a class="nav-link text-dark" href="#education">Education</a></li>
                             <li class="nav-item"><a class="nav-link text-dark" href="#skills">Skills</a></li>
                             <li class="nav-item"><a class="btn btn-dark btn-sm px-3" href="#contact">Get in touch</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark" href="<%= ResolveUrl("~/login?logout=1") %>">Sign out</a></li>
                         </ul>
                     </div>
                 </div>

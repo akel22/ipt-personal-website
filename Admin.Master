@@ -1,0 +1,73 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="VelascoPersonalWebsite_IPT.AdminMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%: Page.Title %> - Velasco Admin</title>
+    <link href="<%= ResolveUrl("~/Content/bootstrap.min.css") %>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Content/Site.css") %>" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+<body class="admin-body text-dark">
+    <form id="form1" runat="server">
+        <div class="admin-shell">
+            <aside class="admin-sidebar text-black" aria-label="Admin navigation">
+                <div class="admin-sidebar-header px-4 py-4">
+                    <asp:HyperLink ID="AdminBrandLink" runat="server"
+                        NavigateUrl="~/admin"
+                        CssClass="d-flex align-items-center gap-2 text-black text-decoration-none">
+                          <img src="<%= ResolveUrl("~/assets/svg/tilla_logo.svg") %>"
+                            alt="owl."
+                            class="img-fluid d-block"
+                            width="40"
+                            height="40" />
+                            <span class="d-block fw-semibold">Admin Ezekiel</span>
+                       
+                    </asp:HyperLink>
+                </div>
+
+                <nav class="admin-sidebar-navigation px-3" aria-label="Admin sections">
+                    <p class="admin-sidebar-label text-uppercase px-3 mb-2">Workspace</p>
+                    <asp:HyperLink ID="DashboardLink" runat="server"
+                        NavigateUrl="~/admin"
+                        CssClass="admin-sidebar-link">
+                        <span class="admin-nav-icon" aria-hidden="true">&#9632;</span>
+                        <span>Dashboard</span>
+                    </asp:HyperLink>
+                    <asp:HyperLink ID="AuditLogsLink" runat="server"
+                        NavigateUrl="~/admin/audit-logs"
+                        CssClass="admin-sidebar-link">
+                        <span class="admin-nav-icon" aria-hidden="true">&#9776;</span>
+                        <span>Audit logs</span>
+                    </asp:HyperLink>
+                    <asp:HyperLink ID="ProfileLink" runat="server"
+                        NavigateUrl="~/admin/profile"
+                        CssClass="admin-sidebar-link">
+                        <span class="admin-nav-icon" aria-hidden="true">&#9733;</span>
+                        <span>Profile</span>
+                    </asp:HyperLink>
+                </nav>
+
+                <div class="admin-sidebar-footer px-3 pb-4">
+                    <asp:HyperLink ID="SignOutLink" runat="server"
+                        NavigateUrl="~/login?logout=1"
+                        CssClass="admin-sidebar-link admin-signout-link">
+                        <span class="admin-nav-icon" aria-hidden="true">&#8592;</span>
+                        <span>Sign out</span>
+                    </asp:HyperLink>
+                </div>
+            </aside>
+
+            <div class="admin-main">
+                <main class="admin-content px-3 px-lg-4 py-4 py-lg-5">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+                </main>
+            </div>
+        </div>
+
+        <script src="<%= ResolveUrl("~/Scripts/bootstrap.bundle.min.js") %>"></script>
+    </form>
+</body>
+</html>

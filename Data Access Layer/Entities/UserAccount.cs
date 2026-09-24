@@ -35,12 +35,19 @@ namespace VelascoPersonalWebsite_IPT.DataAccess.Entities
         public bool IsActive { get; set; }
 
         [Required]
+        public bool IsOnline { get; set; }
+
+        [Required]
+        public Role Role { get; private set; } = Role.User;
+
+        [Required]
         public DateTime RegisteredUtc { get; set; }
 
         public UserAccount()
         {
             UserId = Guid.NewGuid();
             IsActive = true;
+            IsOnline = false;
             RegisteredUtc = DateTime.UtcNow;
         }
     }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VelascoPersonalWebsite_IPT {
+namespace IPT_VelascoPersonalWebsite {
     
     
     public partial class Site_Mobile {

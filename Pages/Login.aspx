@@ -15,6 +15,7 @@
                         <h1 class="h4 fw-semibold text-dark mb-1">Hoot! Sign in to your account</h1>
                         <p class="text-secondary small mb-4">Enter your details to continue.</p>
                         <asp:ValidationSummary ID="LoginValidationSummary" runat="server" ValidationGroup="Login" CssClass="alert alert-danger small py-2 mb-4" HeaderText="Please correct the following:" />
+                        <asp:Label ID="LoginErrorLabel" runat="server" CssClass="alert alert-danger small py-2 mb-4 d-block" Visible="false" />
                         <div class="mb-3">
                             <asp:Label ID="UsernameLabel" runat="server" AssociatedControlID="UsernameTextBox" CssClass="form-label small fw-semibold text-dark" Text="Username" />
                             <asp:TextBox ID="UsernameTextBox" runat="server" CssClass="form-control mb-1" MaxLength="20" autocomplete="username" placeholder="axelot123" />
@@ -31,7 +32,7 @@
                             <asp:CheckBox ID="RememberMeCheckBox" runat="server" />
                             <asp:Label ID="RememberMeLabel" runat="server" AssociatedControlID="RememberMeCheckBox" CssClass="form-check-label small text-secondary" Text="Remember me" />
                         </div>
-                        <asp:Button ID="LoginButton" runat="server" Text="Sign in" CssClass="btn btn-dark w-100 py-2" ValidationGroup="Login" />
+                        <asp:Button ID="LoginButton" runat="server" Text="Sign in" CssClass="btn btn-dark w-100 py-2" ValidationGroup="Login" OnClick="LoginButton_Click" />
                         <p class="text-center text-secondary small mt-4 mb-0">Don't have an account?
                             <asp:HyperLink ID="RegisterLink" runat="server" NavigateUrl="~/register" CssClass="link-dark fw-semibold" Text="Register here" /></p>
                     </div>

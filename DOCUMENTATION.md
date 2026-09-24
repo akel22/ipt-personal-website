@@ -40,6 +40,8 @@ The application targets **.NET Framework 4.8.1** and uses C# code-behind files w
 | `packages.config` | NuGet package versions used by the legacy project. |
 | `Properties/AssemblyInfo.cs` | Assembly metadata. |
 | `Home.aspx` | Root authenticated portfolio landing page. |
+| `Pages/Admin/Profile.aspx` | Admin form for editing the persisted public portfolio profile. |
+| `Pages/Admin/UserDetails.aspx` | Read-only admin view of a user account. |
 | `assets/svg/` | Local SVG assets used by the portfolio contact and social links. |
 
 ## Application Startup
@@ -51,15 +53,21 @@ The application targets **.NET Framework 4.8.1** and uses C# code-behind files w
 
 `Authenticated.Master` provides the portfolio HTML document structure. It renders the current page title, loads the local Bootstrap stylesheet and bundle, provides anchor navigation for the portfolio sections, and renders the page-specific `ContentPlaceHolder1` placeholder. `Home.aspx` supplies the landing page content.
 
+The Profile admin page at `/admin/profile` stores all public portfolio text in the singleton `Profile` entity. `Home.aspx` loads this record through the application profile service and HTML-encodes values before rendering them. The first request creates the default profile values when the database is available.
+
 ## Routing and Navigation
 
 FriendlyUrls are enabled in `App_Start/RouteConfig.cs` with `RedirectMode.Permanent`. Navigation in `Site.Master` uses application-relative links:
 
 - `/` - home route
+- `/admin/profile` - edit public portfolio profile content
+- `/admin/user-details?id={userId}` - read-only user account details
 - `/About` - About route
 - `/Contact` - Contact route
 
 The project file contains references to `Default.aspx`, `About.aspx`, and `Contact.aspx` and their associated code-behind/designer files. If those files are absent from a particular checkout, treat the project file as a stale template reference and verify the working tree before implementing page-specific changes. Do not infer page behavior that is not present in source.
+
+The admin audit-log page at `/admin/audit-logs` supports user search by username/email and filtering by Registration or Sign in. Results are loaded from `AuditLog` with the related `UserAccount`, ordered newest first, and limited to the most recent 200 matching records.
 
 ## Assets and Bundling
 

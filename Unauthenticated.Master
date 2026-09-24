@@ -12,7 +12,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="bg-light text-dark">
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" method="post">
 
         <header>
             <nav class="navbar bg-white border-bottom py-3" aria-label="Main navigation">

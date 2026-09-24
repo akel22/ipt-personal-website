@@ -24,6 +24,15 @@ namespace VelascoPersonalWebsite_IPT.Pages
         protected global::System.Web.UI.WebControls.ValidationSummary RegistrationValidationSummary;
 
         /// <summary>
+        /// RegistrationMessageLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label RegistrationMessageLabel;
+
+        /// <summary>
         /// UsernameLabel control.
         /// </summary>
         /// <remarks>
@@ -265,5 +274,14 @@ namespace VelascoPersonalWebsite_IPT.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button RegisterButton;
+
+        /// <summary>
+        /// SignInLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink SignInLink;
     }
 }

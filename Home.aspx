@@ -9,26 +9,27 @@
         <section id="about" class="container py-5 py-lg-6">
             <div class="row align-items-center g-5">
                 <div class="col-lg-7">
-                    <h1 class="display-4 fw-bold mb-3">Hello, I'm <span class="text-secondary">EJ</span>.</h1>
-                    <p class="lead text-secondary mb-4">An Information Technology student aspiring to be a Backend/ Data Engineer.</p>
+                    <h1 class="portfolio-hero-heading">Hello! I'm <span class="portfolio-hero-name"><%: PublicProfile.GreetingName %></span></h1>
+                    <p class="lead text-secondary mb-4"><%: PublicProfile.Introduction %></p>
                     <a class="btn btn-dark px-4 py-2 me-2" href="#contact">Get in touch</a>
                     <a class="btn btn-outline-dark px-4 py-2" href="#education">Explore my journey</a>
                 </div>
                 <div class="col-lg-5">
+            
                     <div class="bg-white border rounded-4 p-4 p-md-5">
                         <h2 class="h5 fw-semibold mb-4">Let's connect</h2>
                         <div class="d-flex flex-column gap-3">
-                            <a class="d-flex align-items-center gap-3 text-decoration-none text-dark" href="mailto:velasco.ezekieljohn.javellana@gmail.com">
+                            <a class="d-flex align-items-center gap-3 text-decoration-none text-dark" href="mailto:<%: PublicProfile.Email %>">
                                 <img class="portfolio-social-icon" src="<%= ResolveUrl("~/assets/svg/gmail_logo.svg") %>" alt="" width="28" height="28" />
-                                <span>velasco.ezekieljohn.javellana@gmail.com</span>
+                                <span><%: PublicProfile.Email %></span>
                             </a>
-                            <a class="d-flex align-items-center gap-3 text-decoration-none text-dark" href="https://www.linkedin.com/in/ezekiel-john-velasco-2a15a2417/" target="_blank" rel="noopener noreferrer">
+                            <a class="d-flex align-items-center gap-3 text-decoration-none text-dark" href="<%: PublicProfile.LinkedInUrl %>" target="_blank" rel="noopener noreferrer">
                                 <img class="portfolio-social-icon" src="<%= ResolveUrl("~/assets/svg/linkedin_logo.svg") %>" alt="" width="28" height="28" />
-                                <span>linkedin.com/in/ezekiel-john-velasco</span>
+                                <span><%: PublicProfile.LinkedInUrl %></span>
                             </a>
-                            <a class="d-flex align-items-center gap-3 text-decoration-none text-dark" href="https://github.com/akel22" target="_blank" rel="noopener noreferrer">
+                            <a class="d-flex align-items-center gap-3 text-decoration-none text-dark" href="<%: PublicProfile.GitHubUrl %>" target="_blank" rel="noopener noreferrer">
                                 <img class="portfolio-social-icon" src="<%= ResolveUrl("~/assets/svg/github_logo.svg") %>" alt="" width="28" height="28" />
-                                <span>github.com/akel22</span>
+                                <span><%: PublicProfile.GitHubUrl %></span>
                             </a>
                         </div>
                     </div>
@@ -40,19 +41,19 @@
             <div class="container py-5 py-lg-6">
                 <div class="row g-4 g-lg-5">
                     <div class="col-lg-4">
-                        <h2 class="h2 fw-bold mb-3">Educational attainment</h2>
-                        <p class="text-secondary mb-0">The milestones that continue to shape my path in technology.</p>
+                        <h2 class="h2 fw-bold mb-3"><%: PublicProfile.EducationHeading %></h2>
+                        <p class="text-secondary mb-0"><%: PublicProfile.EducationSummary %></p>
                     </div>
                     <div class="col-lg-8">
                         <div class="border-start border-3 ps-4 mb-4">
-                            <p class="small fw-semibold text-secondary mb-1">2024 - Present</p>
-                            <h3 class="h5 fw-semibold mb-1">Information Technology</h3>
-                            <p class="text-secondary mb-0">Currently pursuing an Information Technology degree.</p>
+                            <p class="small fw-semibold text-secondary mb-1"><%: PublicProfile.CurrentEducationPeriod %></p>
+                            <h3 class="h5 fw-semibold mb-1"><%: PublicProfile.CurrentEducationTitle %></h3>
+                            <p class="text-secondary mb-0"><%: PublicProfile.CurrentEducationDescription %></p>
                         </div>
                         <div class="border-start border-3 ps-4">
-                            <p class="small fw-semibold text-secondary mb-1">2022 - 2024</p>
-                            <h3 class="h5 fw-semibold mb-1">Senior High School Graduate</h3>
-                            <p class="text-secondary mb-0">Completed a Science, Technology, Engineering, and Mathematics (STEM) strand.</p>
+                            <p class="small fw-semibold text-secondary mb-1"><%: PublicProfile.PreviousEducationPeriod %></p>
+                            <h3 class="h5 fw-semibold mb-1"><%: PublicProfile.PreviousEducationTitle %></h3>
+                            <p class="text-secondary mb-0"><%: PublicProfile.PreviousEducationDescription %></p>
                         </div>
                     </div>
                 </div>
@@ -62,14 +63,14 @@
         <section id="interests" class="container py-5 py-lg-6">
             <div class="row g-4">
                 <div class="col-md-5">
-                    <h2 class="h2 fw-bold mb-3">Hobbies and interests</h2>
-                    <p class="text-secondary mb-0">A few simple things that keep me curious, focused, and inspired.</p>
+                    <h2 class="h2 fw-bold mb-3"><%: PublicProfile.InterestsHeading %></h2>
+                    <p class="text-secondary mb-0"><%: PublicProfile.InterestsSummary %></p>
                 </div>
                 <div class="col-md-7">
                     <div class="row g-3">
-                        <div class="col-sm-4"><div class="bg-white border rounded-3 p-4 h-100"><h3 class="h5 fw-semibold mb-2">Studying</h3><p class="small text-secondary mb-0">Learning something new every day.</p></div></div>
-                        <div class="col-sm-4"><div class="bg-white border rounded-3 p-4 h-100"><h3 class="h5 fw-semibold mb-2">Music</h3><p class="small text-secondary mb-0">Listening to music and discovering new sounds.</p></div></div>
-                        <div class="col-sm-4"><div class="bg-white border rounded-3 p-4 h-100"><h3 class="h5 fw-semibold mb-2">Movies</h3><p class="small text-secondary mb-0">Watching movies and exploring different stories.</p></div></div>
+                        <div class="col-sm-4"><div class="bg-white border rounded-3 p-4 h-100"><h3 class="h5 fw-semibold mb-2"><%: PublicProfile.InterestOneTitle %></h3><p class="small text-secondary mb-0"><%: PublicProfile.InterestOneDescription %></p></div></div>
+                        <div class="col-sm-4"><div class="bg-white border rounded-3 p-4 h-100"><h3 class="h5 fw-semibold mb-2"><%: PublicProfile.InterestTwoTitle %></h3><p class="small text-secondary mb-0"><%: PublicProfile.InterestTwoDescription %></p></div></div>
+                        <div class="col-sm-4"><div class="bg-white border rounded-3 p-4 h-100"><h3 class="h5 fw-semibold mb-2"><%: PublicProfile.InterestThreeTitle %></h3><p class="small text-secondary mb-0"><%: PublicProfile.InterestThreeDescription %></p></div></div>
                     </div>
                 </div>
             </div>
@@ -101,8 +102,8 @@
             <div class="bg-dark text-white rounded-4 p-4 p-md-5">
                 <div class="row align-items-start g-4 g-lg-5">
                     <div class="col-lg-5">
-                        <h2 class="display-6 fw-bold mb-3">Get in touch</h2>
-                        <p class="text-white-50 mb-0 portfolio-contact-copy">Have a question, opportunity, or idea to share? Send me a message and I will get back to you.</p>
+                        <h2 class="display-6 fw-bold mb-3"><%: PublicProfile.ContactHeading %></h2>
+                        <p class="text-white-50 mb-0 portfolio-contact-copy"><%: PublicProfile.ContactDescription %></p>
                     </div>
                     <div class="col-lg-7">
                         <div class="portfolio-contact-form">
@@ -128,21 +129,26 @@
     </main>
 
     <footer class="portfolio-footer bg-black text-white">
-
         <div class="container py-5 py-lg-6">
             <div class="row align-items-start justify-content-between g-5">
                 <div class="col-12 col-lg-5">
-                    <p class="portfolio-footer-statement text-uppercase fw-bold mb-4">Just keep<br />learning.</p>
-                    <p class="small text-white-50 mb-0">&#169;<%: DateTime.Now.Year %> Ezekiel John Velasco.<br />Digital Portfolio</p>
+                    <p class="portfolio-footer-statement text-uppercase fw-bold mb-4">
+                        <asp:Repeater ID="FooterStatementRepeater" runat="server">
+                            <ItemTemplate>
+                                <%#: Container.DataItem %><br />
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </p>
+                    <p class="small text-white-50 mb-0">&#169;<%: DateTime.Now.Year %> <%: PublicProfile.GreetingName %>.<br />Digital Portfolio</p>
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
                     <h2 class="portfolio-footer-heading text-uppercase mb-3">Contact</h2>
                     <ul class="list-unstyled portfolio-footer-list mb-0">
-                        <li>velasco.ezekieljohn.javellana@gmail.com</li>
-                        <li>+63 928-494-8326</li>
-                        <li>GitHub: akel22</li>
-                        <li>LinkedIn: Ezekiel John Velasco</li>
+                        <li><%: PublicProfile.FooterEmail %></li>
+                        <li><%: PublicProfile.FooterPhone %></li>       
+                        <li><%: PublicProfile.FooterGitHub %></li>
+                        <li><%: PublicProfile.FooterLinkedIn %></li>
                     </ul>
                 </div>
             </div>

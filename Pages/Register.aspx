@@ -16,12 +16,14 @@
                     <div class="card-body p-3 p-md-4 registration-form-column">
                         <header class="mb-3">
                             <h2 class="h4 fw-semibold text-dark mb-1">Create your account</h2>
-                            <p class="text-secondary small mb-0">Fill in your details to get started.</p>
+                          <p class="text-secondary small mb-0">Fill in your details and view Ej's portfolio.</p>
                         </header>
 
                         <asp:ValidationSummary ID="RegistrationValidationSummary" runat="server"
                             ValidationGroup="Registration" CssClass="alert alert-danger small py-2 mb-4"
                             HeaderText="Please correct the following:" />
+
+                        <asp:Label ID="RegistrationMessageLabel" runat="server" CssClass="d-none" Visible="false" />
 
                         <div class="row g-3 g-lg-4">
 
@@ -40,6 +42,7 @@
                                         Text="Username is required." />
                                     <asp:RegularExpressionValidator ID="UsernameFormatValidator" runat="server"
                                         ControlToValidate="UsernameTextBox" ValidationGroup="Registration"
+                                        ValidationExpression="^[A-Za-z0-9_]{3,20}$"
                                         CssClass="text-danger small"
                                         Display="Dynamic" ErrorMessage="Username must be 3–20 characters and contain only letters, numbers, or underscores."
                                         Text="Username must be 3–20 letters, numbers, or underscores." />
@@ -148,7 +151,7 @@
                         <hr class="text-secondary my-3" />
 
                         <asp:Button ID="RegisterButton" runat="server" Text="Create account"
-                            CssClass="btn btn-dark w-100 py-2" ValidationGroup="Registration" />
+                            CssClass="btn btn-dark w-100 py-2" ValidationGroup="Registration" OnClick="RegisterButton_Click" />
 
                         <p class="text-center text-secondary small mt-4 mb-0">
                             Already have an account?
