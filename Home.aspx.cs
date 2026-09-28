@@ -8,6 +8,7 @@ namespace VelascoPersonalWebsite_IPT
     public partial class Home : System.Web.UI.Page
     {
         private readonly ProfileService profileService = new ProfileService();
+        private readonly AuditService auditService = new AuditService();
 
         public ProfileDto PublicProfile { get; private set; }
 
@@ -20,6 +21,8 @@ namespace VelascoPersonalWebsite_IPT
                 return;
             }
 
+            Guid userId;
+            if (Guid.TryParse(Context.User.Identity.Name, out userId)) auditService.RecordPageVisit(userId);
             PublicProfile = profileService.GetOrCreate();
             FooterStatementRepeater.DataSource = PublicProfile.FooterStatement.Split('|').Select(line => line.Trim()).Where(line => line.Length > 0);
             FooterStatementRepeater.DataBind();

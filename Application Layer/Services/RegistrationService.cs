@@ -12,12 +12,18 @@ namespace VelascoPersonalWebsite_IPT.Application.Services
     public class RegistrationService
     {
         private readonly PasswordHasher passwordHasher;
+        private readonly AuditService auditService;
 
-        public RegistrationService() : this(new PasswordHasher()) { }
+        public RegistrationService() : this(new PasswordHasher(), new AuditService()) { }
 
-        public RegistrationService(PasswordHasher hasher)
+        public RegistrationService(PasswordHasher hasher) : this(hasher, new AuditService())
+        {
+        }
+
+        public RegistrationService(PasswordHasher hasher, AuditService auditService)
         {
             passwordHasher = hasher;
+            this.auditService = auditService;
         }
 
         public bool Register(RegistrationDto dto, out string error)
@@ -120,6 +126,7 @@ namespace VelascoPersonalWebsite_IPT.Application.Services
 
                     context.UserAccounts.Add(account);
                     context.SaveChanges();
+                    auditService.RecordRegistration(account.UserId);
 
                     return true;
                 }

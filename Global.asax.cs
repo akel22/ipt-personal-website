@@ -92,15 +92,24 @@ namespace IPT_VelascoPersonalWebsite
 
             if (Context.User == null || !Context.User.Identity.IsAuthenticated)
             {
+                new AuditService().RecordUnauthorizedAccess(GetCurrentUserId());
                 RedirectToLogin();
                 return;
             }
 
             if (isAdmin && !Context.User.IsInRole("Admin"))
             {
+                new AuditService().RecordUnauthorizedAccess(GetCurrentUserId());
                 Response.Redirect(ToAbsolutePath("~/home"), false);
                 Context.ApplicationInstance.CompleteRequest();
             }
+        }
+
+        private Guid? GetCurrentUserId()
+        {
+            Guid userId;
+            return Context.User != null && Context.User.Identity != null &&
+                Guid.TryParse(Context.User.Identity.Name, out userId) ? userId : (Guid?)null;
         }
 
         private static void MarkTicketUserOffline(FormsAuthenticationTicket ticket)

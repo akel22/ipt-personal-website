@@ -21,6 +21,7 @@ namespace VelascoPersonalWebsite_IPT.DataAccess.Configurations
             builder.HasOne(log => log.User)
                 .WithMany()
                 .HasForeignKey(log => log.UserId)
+                .IsRequired(false)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasIndex(log => new { log.UserId, log.OccurredUtc });

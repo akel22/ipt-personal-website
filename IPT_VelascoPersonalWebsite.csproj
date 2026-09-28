@@ -320,6 +320,7 @@
     <Compile Include="Application Layer\DTOs\ProfileDto.cs" />
     <Compile Include="Application Layer\DTOs\RegistrationDto.cs" />
     <Compile Include="Application Layer\DTOs\UserAccountDto.cs" />
+    <Compile Include="Application Layer\Services\AuditService.cs" />
     <Compile Include="Application Layer\Services\AuthenticationService.cs" />
     <Compile Include="Application Layer\Services\PasswordHasher.cs" />
     <Compile Include="Application Layer\Services\ProfileService.cs" />
@@ -358,6 +359,7 @@
     <Compile Include="Migrations\20260923163815_InitialCreate.Designer.cs">
       <DependentUpon>20260923163815_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20260924120000_AllowAnonymousAuditActors.cs" />
     <Compile Include="Migrations\WebsiteDbContextModelSnapshot.cs" />
     <Compile Include="Pages\Admin\AuditLogs.aspx.cs">
       <DependentUpon>AuditLogs.aspx</DependentUpon>
@@ -368,7 +370,6 @@
     </Compile>
     <Compile Include="Pages\Admin\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Admin\Dashboard.aspx.designer.cs" />
     <Compile Include="Pages\Admin\Profile.aspx.cs">

@@ -28,6 +28,7 @@ namespace VelascoPersonalWebsite_IPT
 
             SetActiveLink(DashboardLink, currentPath == dashboardPath);
             SetActiveLink(AuditLogsLink, currentPath == auditLogsPath);
+            SetActiveLink(ProfileLink, currentPath == profilePath);
         }
 
         private static void SetActiveLink(System.Web.UI.WebControls.HyperLink link, bool isActive)

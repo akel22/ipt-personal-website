@@ -1,11 +1,13 @@
 using System;
 using System.Web.UI;
+using VelascoPersonalWebsite_IPT.Application.Services;
 using VelascoPersonalWebsite_IPT.DataAccess.DbContext;
 
 namespace VelascoPersonalWebsite_IPT.Pages.Admin
 {
     public partial class UserDetails : Page
     {
+        private readonly AuditService auditService = new AuditService();
         public string UsernameValue { get; private set; }
         public string EmailValue { get; private set; }
         public string EmploymentStatusValue { get; private set; }
@@ -26,6 +28,8 @@ namespace VelascoPersonalWebsite_IPT.Pages.Admin
                 GenderValue = user.Gender.ToString(); DateOfBirthValue = user.DateOfBirth.ToString("yyyy-MM-dd");
                 AccountStateValue = user.IsActive ? "Active" : "Inactive"; RegisteredValue = user.RegisteredUtc.ToString("yyyy-MM-dd HH:mm");
                 DetailsPanel.Visible = true;
+                Guid adminId;
+                if (Guid.TryParse(Context.User.Identity.Name, out adminId)) auditService.RecordAdminUserDetailsAccess(adminId);
             }
         }
 

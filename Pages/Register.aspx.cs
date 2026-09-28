@@ -8,9 +8,11 @@ namespace VelascoPersonalWebsite_IPT.Pages
     public partial class Register : Page
     {
         private readonly RegistrationService registrationService = new RegistrationService();
+        private readonly AuditService auditService = new AuditService();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            auditService.RecordPageVisit(null);
         }
 
         protected void RegisterButton_Click(object sender, EventArgs e)

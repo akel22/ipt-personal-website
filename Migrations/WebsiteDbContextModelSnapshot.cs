@@ -32,7 +32,7 @@ namespace IPT_VelascoPersonalWebsite.Migrations
                     b.Property<DateTime>("OccurredUtc")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("AuditLogId");
@@ -287,8 +287,7 @@ namespace IPT_VelascoPersonalWebsite.Migrations
                     b.HasOne("VelascoPersonalWebsite_IPT.DataAccess.Entities.UserAccount", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 #pragma warning restore 612, 618
         }

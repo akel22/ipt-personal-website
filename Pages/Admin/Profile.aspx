@@ -1,12 +1,12 @@
 <%@ Page Title="Profile" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="VelascoPersonalWebsite_IPT.Pages.Admin.Profile" %>
 
 <asp:Content ID="HeadContent" ContentPlaceHolderID="head" runat="server">
-    <meta name="description" content="Edit the public portfolio profile." />
+    <meta name="description" content="Edit the public portfolio content." />
 </asp:Content>
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section aria-labelledby="profileHeading">
-        <div class="mb-4"><h1 id="profileHeading" class="admin-page-title mb-2">Profile</h1><p class="text-secondary mb-0">Manage the content shown on your public portfolio.</p></div>
+        <div class="mb-4"><h1 id="profileHeading" class="admin-page-title mb-2">Content</h1><p class="text-secondary mb-0">Manage the content shown on your public portfolio.</p></div>
         <asp:ValidationSummary ID="ProfileValidationSummary" runat="server" CssClass="alert alert-danger" />
         <asp:Literal ID="FeedbackLiteral" runat="server" />
         <section class="admin-panel p-4">

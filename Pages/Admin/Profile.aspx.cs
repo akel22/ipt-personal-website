@@ -9,11 +9,13 @@ namespace VelascoPersonalWebsite_IPT.Pages.Admin
     public partial class Profile : Page
     {
         private readonly ProfileService profileService = new ProfileService();
+        private readonly AuditService auditService = new AuditService();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                RecordProfilePageVisit();
                 Populate(profileService.GetOrCreate());
             }
         }
@@ -23,12 +25,26 @@ namespace VelascoPersonalWebsite_IPT.Pages.Admin
             var result = profileService.Save(ReadForm());
             if (!result.IsValid)
             {
+                RecordProfileSave();
                 FeedbackLiteral.Text = "<div class=\"alert alert-danger\">Please correct the highlighted profile values.</div>";
                 ProfileValidationSummary.HeaderText = string.Join(" ", result.Errors.Select(error => Server.HtmlEncode(error.ErrorMessage)));
                 return;
             }
 
+            RecordProfileSave();
             FeedbackLiteral.Text = "<div class=\"alert alert-success\">Profile saved successfully.</div>";
+        }
+
+        private void RecordProfilePageVisit()
+        {
+            Guid userId;
+            if (Guid.TryParse(Context.User.Identity.Name, out userId)) auditService.RecordPageVisit(userId);
+        }
+
+        private void RecordProfileSave()
+        {
+            Guid userId;
+            if (Guid.TryParse(Context.User.Identity.Name, out userId)) auditService.RecordAdminProfileSave(userId);
         }
 
         private ProfileDto ReadForm()

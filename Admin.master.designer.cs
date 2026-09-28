@@ -60,6 +60,15 @@ namespace VelascoPersonalWebsite_IPT
         protected global::System.Web.UI.WebControls.HyperLink AuditLogsLink;
 
         /// <summary>
+        /// ProfileLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink ProfileLink;
+
+        /// <summary>
         /// SignOutLink control.
         /// </summary>
         /// <remarks>

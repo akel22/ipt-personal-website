@@ -23,7 +23,7 @@
                             class="img-fluid d-block"
                             width="40"
                             height="40" />
-                            <span class="d-block fw-semibold">Admin Ezekiel</span>
+                         
                        
                     </asp:HyperLink>
                 </div>
@@ -46,7 +46,7 @@
                         NavigateUrl="~/admin/profile"
                         CssClass="admin-sidebar-link">
                         <span class="admin-nav-icon" aria-hidden="true">&#9733;</span>
-                        <span>Profile</span>
+                        <span>Content</span>
                     </asp:HyperLink>
                 </nav>
 

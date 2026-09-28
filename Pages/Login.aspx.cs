@@ -10,9 +10,11 @@ namespace VelascoPersonalWebsite_IPT.Pages
     public partial class Login : Page
     {
         private readonly AuthenticationService authenticationService = new AuthenticationService();
+        private readonly AuditService auditService = new AuditService();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            auditService.RecordPageVisit(GetCurrentUserId());
             if (string.Equals(Request.QueryString["logout"], "1", StringComparison.Ordinal))
             {
                 SignOutCurrentUser();
@@ -82,20 +84,30 @@ namespace VelascoPersonalWebsite_IPT.Pages
 
         private void SignOutCurrentUser()
         {
+            Guid? userId = null;
             var cookie = Request.Cookies[FormsAuthentication.FormsCookieName];
             if (cookie != null && !string.IsNullOrWhiteSpace(cookie.Value))
             {
                 var ticket = FormsAuthentication.Decrypt(cookie.Value);
-                Guid userId;
-                if (ticket != null && Guid.TryParse(ticket.Name, out userId))
+                Guid parsedUserId;
+                if (ticket != null && Guid.TryParse(ticket.Name, out parsedUserId))
                 {
-                    authenticationService.MarkOffline(userId);
+                    userId = parsedUserId;
+                    authenticationService.MarkOffline(parsedUserId);
                 }
             }
 
+            auditService.RecordSignOut(userId);
             FormsAuthentication.SignOut();
             Session.Clear();
             Session.Abandon();
+        }
+
+        private Guid? GetCurrentUserId()
+        {
+            Guid userId;
+            return Context.User != null && Context.User.Identity != null &&
+                Guid.TryParse(Context.User.Identity.Name, out userId) ? userId : (Guid?)null;
         }
     }
 }

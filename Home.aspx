@@ -9,7 +9,7 @@
         <section id="about" class="container py-5 py-lg-6">
             <div class="row align-items-center g-5">
                 <div class="col-lg-7">
-                    <h1 class="portfolio-hero-heading">Hello! I'm <span class="portfolio-hero-name"><%: PublicProfile.GreetingName %></span></h1>
+                    <h1 class="portfolio-hero-heading">Hello! I'm <%: PublicProfile.GreetingName %></h1>
                     <p class="lead text-secondary mb-4"><%: PublicProfile.Introduction %></p>
                     <a class="btn btn-dark px-4 py-2 me-2" href="#contact">Get in touch</a>
                     <a class="btn btn-outline-dark px-4 py-2" href="#education">Explore my journey</a>

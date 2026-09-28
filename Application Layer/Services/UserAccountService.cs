@@ -6,6 +6,22 @@ namespace VelascoPersonalWebsite_IPT.Application.Services
 {
     public class UserAccountService
     {
+        public bool ToggleActive(Guid userId)
+        {
+            using (var context = WebsiteDbContextFactory.Create())
+            {
+                var user = context.UserAccounts.Find(userId);
+                if (user == null)
+                {
+                    return false;
+                }
+
+                user.IsActive = !user.IsActive;
+                context.SaveChanges();
+                return true;
+            }
+        }
+
         public bool Delete(Guid userId)
         {
             using (var context = WebsiteDbContextFactory.Create())

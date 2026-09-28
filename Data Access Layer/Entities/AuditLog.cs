@@ -10,8 +10,7 @@ namespace VelascoPersonalWebsite_IPT.DataAccess.Entities
         [Key]
         public long AuditLogId { get; private set; }
 
-        [Required]
-        public Guid UserId { get; private set; }
+        public Guid? UserId { get; private set; }
 
         [Required]
         public AuditEventType EventType { get; private set; }
@@ -25,7 +24,7 @@ namespace VelascoPersonalWebsite_IPT.DataAccess.Entities
         {
         }
 
-        public AuditLog(Guid userId, AuditEventType eventType)
+        public AuditLog(Guid? userId, AuditEventType eventType)
         {
             UserId = userId;
             EventType = eventType;

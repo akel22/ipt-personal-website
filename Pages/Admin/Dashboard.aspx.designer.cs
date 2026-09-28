@@ -51,22 +51,40 @@ namespace VelascoPersonalWebsite_IPT.Pages.Admin
         protected global::System.Web.UI.WebControls.Literal SearchFeedbackLiteral;
 
         /// <summary>
-        /// StatusFilterDropDownList control.
+        /// EmploymentStatusDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList StatusFilterDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList EmploymentStatusDropDownList;
 
         /// <summary>
-        /// FilterButton control.
+        /// AccountStateDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button FilterButton;
+        protected global::System.Web.UI.WebControls.DropDownList AccountStateDropDownList;
+
+        /// <summary>
+        /// ApplyFiltersButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ApplyFiltersButton;
+
+        /// <summary>
+        /// ClearFiltersButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ClearFiltersButton;
 
         /// <summary>
         /// FilterFeedbackLiteral control.
@@ -77,6 +95,40 @@ namespace VelascoPersonalWebsite_IPT.Pages.Admin
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal FilterFeedbackLiteral;
 
+        /// <summary>
+        /// UsersRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater UsersRepeater;
+
+        /// <summary>
+        /// UsersPreviousButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton UsersPreviousButton;
+
+        /// <summary>
+        /// UsersPaginationRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater UsersPaginationRepeater;
+
+        /// <summary>
+        /// UsersNextButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton UsersNextButton;
     }
 }
