@@ -1,7 +1,7 @@
 # Copilot Instructions
 
 ## Project Guidelines
-- Keep database concerns, EF Core entities, DbContext, and Fluent API configurations in the Data Access Layer; keep DTOs, FluentValidation validators, password hashing orchestration, and business logic in the Application Layer. Validate DTOs before creating entities, and never expose PasswordHash in read DTOs.
+- This is a static HTML/CSS/Bootstrap/JS portfolio site (no backend, database, or build step). Entry point is `index.html`; keep the stack simple and avoid heavy animations or added JS complexity.
 
 ## Skills Section
 - Use the existing old skill content and SVGs exactly; do not change the skill names or make skills editable/customizable.

@@ -1,0 +1,97 @@
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+.portfolio-hero-heading {
+    color: #212529;
+    font-size: clamp(2.5rem, 6vw, 4.75rem);
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 1.05;
+    margin-bottom: 1.25rem;
+    max-width: 48rem;
+}
+
+@media screen and (min-width: 992px) {
+    .py-lg-6 {
+        padding-top: 5rem !important;
+        padding-bottom: 5rem !important;
+    }
+}
+
+.portfolio-social-icon {
+    flex: 0 0 auto;
+}
+
+.portfolio-contact-copy {
+    max-width: 34rem;
+}
+
+.portfolio-eyebrow {
+    color: #198754;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.portfolio-skills-copy {
+    max-width: 38rem;
+}
+
+.portfolio-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(5rem, 6.5rem));
+    gap: 2rem 1.5rem;
+    justify-content: center;
+    max-width: 52rem;
+}
+
+.portfolio-skill-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.portfolio-skill-item img {
+    height: 3rem;
+    object-fit: contain;
+    width: 3rem;
+}
+
+.portfolio-skill-item span {
+    color: #495057;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 576px) {
+    .portfolio-skills-grid {
+        grid-template-columns: repeat(4, minmax(5rem, 6.5rem));
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .portfolio-skills-grid {
+        grid-template-columns: repeat(6, minmax(5rem, 6.5rem));
+    }
+}
+
+.portfolio-footer-statement {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.portfolio-footer-heading {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+.portfolio-footer-list {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    line-height: 1.65;
+}
