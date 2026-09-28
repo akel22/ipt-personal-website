@@ -1,42 +1,28 @@
 # Copilot Instructions
 
-These instructions apply to the entire `IPT_VelascoPersonalWebsite` repository.
+These instructions apply to the entire repository.
 
 ## Project Context
 
-- This is an ASP.NET Web Forms application targeting **.NET Framework 4.8.1**.
-- The project uses a legacy, non-SDK-style `.csproj` file and `packages.config`.
-- The default development host is IIS Express; HTTPS port `44377` is configured.
-- Read `DOCUMENTATION.md` before making changes that affect application structure or shared behavior.
-
-## Framework and Compatibility Rules
-
-- Preserve .NET Framework 4.8.1 compatibility.
-- Use Web Forms patterns already present in the repository: ASPX pages, code-behind files, designer files, master pages, ASCX controls, `Global.asax`, and `App_Start` configuration.
-- Do not assume ASP.NET Core, .NET 5+, dependency injection hosting, Razor Pages, MVC Core, minimal APIs, or SDK-style project behavior.
-- Do not migrate the project or upgrade packages unless the user explicitly requests modernization.
-- Prefer existing dependencies and assets over adding new packages or frameworks.
-
-## Repository Investigation
-
-- Inspect the relevant project file and neighboring source before editing.
-- Treat `IPT_VelascoPersonalWebsite.csproj` as authoritative for explicit content and compile items.
-- Confirm that a referenced page or control actually exists before relying on its behavior. The project may retain template references such as `Default.aspx`, `About.aspx`, or `Contact.aspx`.
-- For shared behavior, inspect `Global.asax.cs`, `App_Start/RouteConfig.cs`, `App_Start/BundleConfig.cs`, and `Site.Master` first.
-- Do not infer database, API, authentication, or test infrastructure that is not present in the repository.
+- This is a static HTML/CSS/Bootstrap/JS personal portfolio site with no backend, build step, or database.
+- Entry point is `index.html` at the repo root. It is a single scrolling page with anchor navigation (`#about`, `#education`, `#interests`, `#skills`, `#contact`).
+- Styling: Bootstrap CSS (`css/vendor/bootstrap.min.css`) plus custom rules in `css/site.css`.
+- Scripting: Bootstrap's bundled JS (`js/vendor/bootstrap.bundle.min.js`, used only for the responsive navbar) and a minimal `js/main.js` (currently just sets the footer year).
+- Assets live under `assets/svg/` (skill icons and brand/social icons). There is no `assets/img/` folder.
+- Deployment target is Vercel as a static site: no build command, output directory is the repo root.
 
 ## Editing Rules
 
 - Make the smallest change that satisfies the request.
-- Preserve the existing namespace: `IPT_VelascoPersonalWebsite`.
-- Preserve the existing indentation, naming, and code organization in each file.
-- Avoid unrelated cleanup, broad formatting changes, or generated-file churn.
-- Keep markup, code-behind, and designer files synchronized when changing Web Forms controls.
-- Update the legacy project file when adding a file that requires explicit `Content`, `Compile`, or `None` entries.
-- Put shared layout changes in `Site.Master` and shared styling in `Content/Site.css` unless the request requires a different scope.
-- When modifying bundles, preserve JavaScript dependency order and verify the bundle paths used by the master page.
-- Do not add comments unless they clarify a non-obvious behavior or match the surrounding file style.
-- Do not commit secrets, credentials, local machine paths, build output, or package caches.
+- Keep the stack simple: plain HTML/CSS/Bootstrap/vanilla JS. Do not introduce a framework, bundler, package.json, or build step unless explicitly requested.
+- Avoid heavy animations or added JS complexity; this site is intentionally minimal.
+- Do not add a contact form or any server-dependent feature — contact is via `mailto:` and social links only.
+- Do not commit secrets, credentials, local machine paths, or editor/IDE metadata.
+
+## Skills Section
+
+- Keep the existing skill names, order, and SVG icons in `#skills` exactly as they are. Do not make this section editable/customizable or data-driven.
+
 
 ## Validation Rules
 
